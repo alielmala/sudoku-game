@@ -68,6 +68,7 @@ void userPlay(int (& a)[9][9],int  b [9][9], string & answer){
 
 
 int main (){
+    while (true){
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole,1);
@@ -170,6 +171,19 @@ int main (){
     case 3:
         userPlay(hardArr,hardArrSolution,answer);
         break;
+    }
+
+    SetConsoleTextAttribute(hConsole,4);
+    int gameEnd;
+    cout << "1- Play again" <<endl <<"2- close the game"<<endl<<endl;
+    cout <<"Enter Your choice: ";
+    cin >> gameEnd;
+    if (gameEnd==1){
+        continue;
+    }
+    else {
+        break;
+    }
     }
         return 0;
 }
