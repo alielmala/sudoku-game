@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+// print the Game
 void printGame(int a[9][9]){
     cout << setw(5);
     for (int y=0; y < 9;++y){
@@ -19,6 +19,7 @@ void printGame(int a[9][9]){
         cout<<endl<<"    ***********************************"<<endl;
     }
 }
+// count number of empty cells
 int countZero(int (&a)[9][9]){
     int numZero=0;
     for(int i=0; i <9; ++i ){
@@ -30,9 +31,9 @@ int countZero(int (&a)[9][9]){
     }
     return numZero;
 }
-
+// function that add the changes and control winning and losing
 void userPlay(int (& a)[9][9],int  b [9][9], string & answer){
-    int q = countZero(a)+5;
+    int q = countZero(a)+5; // save num of empty cells and add 5 num of making mistakes
     for (int i =0;i <q+5; ++i){
 
     int numOfRemainingCells = countZero(a);
@@ -69,9 +70,9 @@ void userPlay(int (& a)[9][9],int  b [9][9], string & answer){
 
 int main (){
     while (true){
-    HANDLE  hConsole;
-    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole,1);
+    HANDLE  hConsole; // create var for Handle type
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // call a function and store its value in the var
+    SetConsoleTextAttribute(hConsole,1); // call func that take 2 parameters.
     for (int i = 0; i< 40 ; ++i)
         cout << "=";
     cout <<endl;
